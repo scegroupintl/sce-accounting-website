@@ -1,8 +1,15 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
+import "./globals.css";
+import Footer from "@/lib/components/Footer";
+import { NavBar } from "@/lib/components/NavBar";
+import { Nunito_Sans } from "next/font/google";
+import { Toaster } from "react-hot-toast";
+
+const baseFont = Nunito_Sans({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Next.js on GitHub Pages',
-  description: 'Deploy your static Next.js site to GitHub Pages.',
+  title: "SCE Accounting Services",
+  description: "Brindando servicios contables confiables para su negocio.",
 };
 
 export default function RootLayout({
@@ -11,8 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className={baseFont.className}>
+        <Toaster position="bottom-center" />
+        <NavBar />
+        <div className="pt-16">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
