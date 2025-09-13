@@ -1,12 +1,15 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslations } from "../context/LanguageContext";
+import { LanguageSwitcher, CompactLanguageSwitcher } from "./LanguageSwitcher";
 
 export const NavBar = () => {
   const [showNav, setShowNav] = useState(true);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const lastScrollY = useRef(0);
+  const { t } = useTranslations();
 
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
@@ -67,28 +70,34 @@ export const NavBar = () => {
                 href="/#services"
                 className="text-gray-700 hover:text-teal-600 px-3 py-2 font-medium transition-colors duration-300 relative group"
               >
-                Servicios
+                {t("nav.services")}
                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </Link>
               <Link
                 href="/about"
                 className="text-gray-700 hover:text-teal-600 px-3 py-2 font-medium transition-colors duration-300 relative group"
               >
-                Sobre Nosotros
+                {t("nav.aboutUs")}
                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </Link>
               <Link
                 href="/#contact"
                 className="text-gray-700 hover:text-teal-600 px-3 py-2 font-medium transition-colors duration-300 relative group"
               >
-                Contacto
+                {t("nav.contact")}
                 <span className="absolute inset-x-0 bottom-0 h-0.5 bg-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
               </Link>
             </div>
+
+            {/* Language Switcher for Desktop */}
+            <LanguageSwitcher variant="button" size="sm" />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            {/* Language Switcher for Mobile */}
+            <CompactLanguageSwitcher />
+
             <button
               id="mobile-menu-button"
               className="text-gray-700 hover:text-teal-600 p-2 rounded-lg hover:bg-gray-50 transition-colors duration-300"
@@ -139,21 +148,21 @@ export const NavBar = () => {
             className="block px-4 py-3 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg font-medium transition-colors duration-300"
             onClick={toggleMobileMenu}
           >
-            Servicios
+            {t("nav.services")}
           </Link>
           <Link
             href="/about"
             className="block px-4 py-3 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg font-medium transition-colors duration-300"
             onClick={toggleMobileMenu}
           >
-            Sobre Nosotros
+            {t("nav.aboutUs")}
           </Link>
           <Link
             href="/#contact"
             className="block px-4 py-3 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg font-medium transition-colors duration-300"
             onClick={toggleMobileMenu}
           >
-            Contacto
+            {t("nav.contact")}
           </Link>
           <div className="pt-2">
             <Link
@@ -161,7 +170,7 @@ export const NavBar = () => {
               className="block w-full text-center bg-gradient-to-r from-teal-600 to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-800 transition-all duration-300 shadow-md"
               onClick={toggleMobileMenu}
             >
-              Consulta Gratuita
+              {t("nav.freeConsultation")}
             </Link>
           </div>
         </div>

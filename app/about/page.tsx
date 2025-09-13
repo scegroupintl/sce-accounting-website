@@ -1,4 +1,9 @@
+"use client";
+import { useTranslations } from "@/lib/context/LanguageContext";
+
 export default function About() {
+  const { t } = useTranslations();
+
   return (
     <main className="min-h-screen">
       {/* About Hero Section */}
@@ -6,11 +11,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Sobre <span className="text-emerald-300">Nosotros</span>
+              {t("about.heroTitle")}
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Con más de 15 años de experiencia, SCE Accounting LLC es su socio
-              de confianza en servicios contables y fiscales.
+              {t("about.heroDescription")}
             </p>
           </div>
         </div>
@@ -22,31 +26,22 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Nuestra Historia
+                {t("about.ourStoryTitle")}
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                SCE Accounting LLC fue fundada con la visión de brindar
-                servicios contables excepcionales a empresas y personas. Desde
-                nuestros inicios, hemos estado comprometidos con la excelencia,
-                integridad y el servicio personalizado.
+                {t("about.storyParagraph1")}
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                A lo largo de los años, hemos crecido desde una pequeña práctica
-                hasta convertirnos en un equipo de profesionales experimentados,
-                siempre manteniendo nuestro enfoque en las relaciones cercanas
-                con nuestros clientes y la atención al detalle.
+                {t("about.storyParagraph2")}
               </p>
               <p className="text-lg text-gray-600">
-                Hoy, continuamos evolucionando para satisfacer las necesidades
-                cambiantes de nuestros clientes, integrando las últimas
-                tecnologías con métodos probados y experiencia profunda en el
-                campo contable.
+                {t("about.storyParagraph3")}
               </p>
             </div>
 
             <div className="bg-gray-50 p-8 rounded-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Datos Clave
+                {t("about.keyDataTitle")}
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -129,11 +124,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Nuestra Misión y Valores
+              {t("about.missionAndValuesTitle")}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Nos guiamos por principios sólidos que definen la manera en que
-              servimos a nuestros clientes y construimos relaciones duraderas.
+              {t("about.missionAndValuesDescription")}
             </p>
           </div>
 
@@ -155,13 +149,10 @@ export default function About() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Nuestra Misión
+                {t("about.mission.title")}
               </h3>
               <p className="text-gray-600 text-center leading-relaxed">
-                Proporcionar servicios contables y fiscales excepcionales que
-                empoderen a nuestros clientes para tomar decisiones financieras
-                informadas, cumplir con sus obligaciones tributarias y alcanzar
-                sus objetivos empresariales con confianza.
+                {t("about.mission.description")}
               </p>
             </div>
 
@@ -182,13 +173,10 @@ export default function About() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Nuestra Visión
+                {t("about.vision.title")}
               </h3>
               <p className="text-gray-600 text-center leading-relaxed">
-                Ser la firma contable de referencia, reconocida por nuestra
-                excelencia, integridad y compromiso con el éxito de nuestros
-                clientes, estableciendo relaciones duraderas basadas en la
-                confianza y resultados excepcionales.
+                {t("about.vision.description")}
               </p>
             </div>
           </div>
@@ -212,11 +200,10 @@ export default function About() {
                 </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                Integridad
+                {t("about.integrity.title")}
               </h4>
               <p className="text-gray-600">
-                Mantenemos los más altos estándares éticos en todas nuestras
-                interacciones y servicios profesionales.
+                {t("about.integrity.description")}
               </p>
             </div>
 
@@ -237,11 +224,10 @@ export default function About() {
                 </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                Excelencia
+                {t("about.excellence.title")}
               </h4>
               <p className="text-gray-600">
-                Nos esforzamos continuamente por superar las expectativas y
-                entregar resultados de la más alta calidad.
+                {t("about.excellence.description")}
               </p>
             </div>
 
@@ -262,11 +248,10 @@ export default function About() {
                 </svg>
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                Servicio Personal
+                {t("about.commitment.title")}
               </h4>
               <p className="text-gray-600">
-                Cada cliente recibe atención personalizada adaptada a sus
-                necesidades específicas y objetivos únicos.
+                {t("about.commitment.description")}
               </p>
             </div>
           </div>
@@ -278,11 +263,10 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Nuestro Equipo
+              {t("about.teamTitle")}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Profesionales experimentados y certificados, comprometidos con su
-              éxito financiero y el crecimiento de su negocio.
+              {t("about.teamDescription")}
             </p>
           </div>
 
@@ -303,47 +287,58 @@ export default function About() {
               </svg>
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Equipo de Profesionales Certificados
+              {t("about.certifiedTeamTitle")}
             </h3>
             <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-              Nuestro equipo está compuesto por contadores públicos certificados
-              (CPA) y especialistas en impuestos con amplia experiencia en
-              diversas industrias. Cada miembro de nuestro equipo se mantiene
-              actualizado con las últimas regulaciones fiscales y mejores
-              prácticas contables.
+              {t("about.certifiedTeamDescription")}
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 text-left">
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  Certificaciones Profesionales
+                  {t("about.professionalCertifications.title")}
                 </h4>
                 <ul className="text-gray-600 space-y-1">
-                  <li>• Contadores Públicos Certificados (CPA)</li>
-                  <li>• Especialistas en Impuestos</li>
-                  <li>• QuickBooks ProAdvisors</li>
+                  <li>• {t("about.professionalCertifications.cpa")}</li>
+                  <li>
+                    • {t("about.professionalCertifications.taxSpecialists")}
+                  </li>
+                  <li>
+                    •{" "}
+                    {t(
+                      "about.professionalCertifications.quickbooksProAdvisors"
+                    )}
+                  </li>
                 </ul>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  Experiencia en Industrias
+                  {t("about.industryExperience.title")}
                 </h4>
                 <ul className="text-gray-600 space-y-1">
-                  <li>• Pequeñas y medianas empresas</li>
-                  <li>• Profesionales independientes</li>
-                  <li>• Servicios y comercio</li>
+                  <li>
+                    • {t("about.industryExperience.smallMediumBusinesses")}
+                  </li>
+                  <li>
+                    • {t("about.industryExperience.independentProfessionals")}
+                  </li>
+                  <li>• {t("about.industryExperience.servicesCommerce")}</li>
                 </ul>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h4 className="font-semibold text-gray-900 mb-2">
-                  Educación Continua
+                  {t("about.continuingEducation.title")}
                 </h4>
                 <ul className="text-gray-600 space-y-1">
-                  <li>• Actualización fiscal anual</li>
-                  <li>• Seminarios especializados</li>
-                  <li>• Certificaciones adicionales</li>
+                  <li>• {t("about.continuingEducation.annualTaxUpdate")}</li>
+                  <li>
+                    • {t("about.continuingEducation.specializedSeminars")}
+                  </li>
+                  <li>
+                    • {t("about.continuingEducation.additionalCertifications")}
+                  </li>
                 </ul>
               </div>
             </div>

@@ -2,10 +2,12 @@
 import React from "react";
 import { BarLoader } from "react-spinners";
 import toast from "react-hot-toast";
+import { useTranslations } from "../context/LanguageContext";
 
 export default function Contact() {
   // Local State
   const [loading, setLoading] = React.useState(false);
+  const { t } = useTranslations();
 
   // Constants
   const inputClassNames =
@@ -46,9 +48,9 @@ export default function Contact() {
         }
       }),
       {
-        loading: "Enviando mensaje...",
-        success: "Mensaje enviado con éxito!",
-        error: "Error al enviar el mensaje.",
+        loading: t("contact.sending"),
+        success: t("contact.successMessage"),
+        error: t("contact.errorMessage"),
       }
     );
   };
@@ -58,18 +60,17 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Contáctenos
+            {t("contact.title")}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Estamos aquí para ayudarle con todas sus necesidades contables. No
-            dude en ponerse en contacto con nosotros.
+            {t("contact.description")}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <h3 className="text-2xl font-semibold mb-6">
-              Información de Contacto
+              {t("contact.contactInfo.getInTouch")}
             </h3>
 
             <div className="space-y-6">
@@ -93,9 +94,9 @@ export default function Contact() {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-gray-900">
-                    Teléfono
+                    {t("contact.contactInfo.phone")}
                   </h4>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
+                  <p className="text-gray-600">+1 (385) 254-1415</p>
                 </div>
               </div>
 
@@ -118,7 +119,9 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-semibold text-gray-900">Email</h4>
+                  <h4 className="text-lg font-semibold text-gray-900">
+                    {t("contact.contactInfo.email")}
+                  </h4>
                   <p className="text-gray-600">info@sceaccounting.com</p>
                 </div>
               </div>
@@ -143,12 +146,12 @@ export default function Contact() {
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lg font-semibold text-gray-900">
-                    Horarios
+                    {t("contact.contactInfo.hours")}
                   </h4>
                   <p className="text-gray-600">
-                    Lunes - Viernes: 8:00 AM - 6:00 PM
+                    {t("contact.contactInfo.mondayFriday")}
                     <br />
-                    Sábados y Domingos: Cerrado
+                    {t("contact.contactInfo.sunday")}
                   </p>
                 </div>
               </div>
@@ -162,7 +165,9 @@ export default function Contact() {
               color="#0d9488"
               cssOverride={{ position: "absolute", top: 0, left: 0 }}
             />
-            <h3 className="text-2xl font-semibold mb-6">Envíenos un Mensaje</h3>
+            <h3 className="text-2xl font-semibold mb-6">
+              {t("contact.title")}
+            </h3>
 
             <form className="space-y-6" onSubmit={handleFormSubmit}>
               <div className="grid md:grid-cols-2 gap-4">
@@ -171,14 +176,14 @@ export default function Contact() {
                     htmlFor="firstName"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Nombre
+                    {t("contact.firstName")}
                   </label>
                   <input
                     type="text"
                     id="firstName"
                     name="firstName"
                     className={inputClassNames}
-                    placeholder="Su nombre"
+                    placeholder={t("contact.firstName")}
                     required
                   />
                 </div>
@@ -187,14 +192,14 @@ export default function Contact() {
                     htmlFor="lastName"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Apellido
+                    {t("contact.lastName")}
                   </label>
                   <input
                     type="text"
                     id="lastName"
                     name="lastName"
                     className={inputClassNames}
-                    placeholder="Su apellido"
+                    placeholder={t("contact.lastName")}
                     required
                   />
                 </div>
@@ -205,14 +210,14 @@ export default function Contact() {
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Email
+                  {t("contact.email")}
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   className={inputClassNames}
-                  placeholder="su@email.com"
+                  placeholder={t("contact.email")}
                   required
                 />
               </div>
@@ -222,14 +227,14 @@ export default function Contact() {
                   htmlFor="phone"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Teléfono
+                  {t("contact.phone")}
                 </label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   className={inputClassNames}
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="+1 (385) 254-1415"
                   required
                 />
               </div>
@@ -239,7 +244,7 @@ export default function Contact() {
                   htmlFor="service"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Servicio de Interés
+                  {t("contact.service")}
                 </label>
                 <select
                   id="service"
@@ -247,15 +252,24 @@ export default function Contact() {
                   className={inputClassNames}
                   required
                 >
-                  <option value="">Seleccione un servicio</option>
-                  <option value="Declaraciones de Impuestos">
-                    Declaraciones de Impuestos
+                  <option value="">{t("contact.selectService")}</option>
+                  <option value={t("contact.serviceOptions.taxReturns")}>
+                    {t("contact.serviceOptions.taxReturns")}
                   </option>
-                  <option value="Planificación Fiscal">
-                    Planificación Fiscal
+                  <option value={t("contact.serviceOptions.taxPlanning")}>
+                    {t("contact.serviceOptions.taxPlanning")}
                   </option>
-                  <option value="Contabilidad">Contabilidad</option>
-                  <option value="Nómina">Nómina</option>
+                  <option value={t("contact.serviceOptions.bookkeeping")}>
+                    {t("contact.serviceOptions.bookkeeping")}
+                  </option>
+                  <option
+                    value={t("contact.serviceOptions.businessConsulting")}
+                  >
+                    {t("contact.serviceOptions.businessConsulting")}
+                  </option>
+                  <option value={t("contact.serviceOptions.other")}>
+                    {t("contact.serviceOptions.other")}
+                  </option>
                 </select>
               </div>
 
@@ -264,14 +278,14 @@ export default function Contact() {
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Mensaje
+                  {t("contact.message")}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
                   className={inputClassNames}
-                  placeholder="Cuéntenos sobre sus necesidades contables..."
+                  placeholder={t("contact.messagePlaceholder")}
                   required
                 ></textarea>
               </div>
@@ -281,7 +295,7 @@ export default function Contact() {
                 className="w-full bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
                 disabled={loading}
               >
-                Enviar Mensaje
+                {t("contact.sendMessage")}
               </button>
             </form>
           </div>

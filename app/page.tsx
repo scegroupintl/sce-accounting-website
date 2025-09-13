@@ -1,6 +1,10 @@
+"use client";
 import Contact from "@/lib/components/Contact";
+import { useTranslations } from "@/lib/context/LanguageContext";
 
 export default function Home() {
+  const { t } = useTranslations();
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -8,25 +12,29 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Servicios Contables
-              <span className="block text-emerald-300">de Confianza</span>
+              <span className="block text-emerald-300">
+                {t("home.heroPreEmphasis")}
+              </span>
+              {t("home.heroTitle")}
+              <span className="block text-emerald-300">
+                {t("home.heroPostEmphasis")}
+              </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Brindamos servicios contables profesionales para hacer crecer su
-              negocio con la tranquilidad de tener sus finanzas en orden.
+              {t("home.heroDescription")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
                 className="bg-emerald-400 text-teal-800 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-200 hover:shadow-lg transition duration-300"
               >
-                Contacto
+                {t("home.contactButton")}
               </a>
               <a
                 href="#services"
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-teal-800 hover:shadow-lg transition duration-300"
               >
-                Nuestros Servicios
+                {t("home.servicesButton")}
               </a>
             </div>
           </div>
@@ -38,11 +46,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Nuestros Servicios
+              {t("home.servicesTitle")}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Ofrecemos una gama completa de servicios contables para satisfacer
-              todas las necesidades de su empresa.
+              {t("home.servicesDescription")}
             </p>
           </div>
 
@@ -64,12 +71,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-4">
-                Declaraciones de Impuestos
+                {t("home.taxReturns.title")}
               </h3>
               <p className="text-gray-600">
-                Preparamos declaraciones de impuestos tanto personales como
-                empresariales de manera oportuna y precisa para maximizar sus
-                beneficios.
+                {t("home.taxReturns.description")}
               </p>
             </div>
 
@@ -90,12 +95,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-4">
-                Planificación Fiscal
+                {t("home.taxPlanning.title")}
               </h3>
               <p className="text-gray-600">
-                Desarrollamos estrategias fiscales personalizadas para minimizar
-                sus obligaciones tributarias y optimizar sus finanzas a largo
-                plazo.
+                {t("home.taxPlanning.description")}
               </p>
             </div>
 
@@ -115,10 +118,11 @@ export default function Home() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Contabilidad</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                {t("home.bookkeeping.title")}
+              </h3>
               <p className="text-gray-600">
-                Llevamos la contabilidad completa de su empresa, incluyendo
-                registro de transacciones, balances y estados financieros.
+                {t("home.bookkeeping.description")}
               </p>
             </div>
 
@@ -138,10 +142,11 @@ export default function Home() {
                   ></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-4">Nómina</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                {t("home.businessConsulting.title")}
+              </h3>
               <p className="text-gray-600">
-                Gestionamos el proceso completo de nómina, incluyendo salarios,
-                prestaciones sociales y cumplimiento de obligaciones laborales.
+                {t("home.businessConsulting.description")}
               </p>
             </div>
           </div>
@@ -154,12 +159,10 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                ¿Por Qué Elegirnos?
+                {t("home.whyChooseUsTitle")}
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Con años de experiencia en el sector contable, ofrecemos
-                servicios personalizados que se adaptan a las necesidades
-                específicas de su empresa.
+                {t("home.whyChooseUsDescription")}
               </p>
 
               <div className="space-y-6">
@@ -181,10 +184,10 @@ export default function Home() {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-gray-900">
-                      Experiencia Comprobada
+                      {t("home.experience.title")}
                     </h3>
                     <p className="text-gray-600">
-                      Más de 15 años brindando servicios contables de calidad.
+                      {t("home.experience.description")}
                     </p>
                   </div>
                 </div>
@@ -207,11 +210,10 @@ export default function Home() {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-gray-900">
-                      Atención Personalizada
+                      {t("home.personalized.title")}
                     </h3>
                     <p className="text-gray-600">
-                      Cada cliente recibe un servicio adaptado a sus necesidades
-                      específicas.
+                      {t("home.personalized.description")}
                     </p>
                   </div>
                 </div>
@@ -234,10 +236,10 @@ export default function Home() {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold text-gray-900">
-                      Tecnología Moderna
+                      {t("home.support.title")}
                     </h3>
                     <p className="text-gray-600">
-                      Utilizamos las últimas herramientas y software contable.
+                      {t("home.support.description")}
                     </p>
                   </div>
                 </div>
@@ -247,12 +249,9 @@ export default function Home() {
             <div className="relative">
               <div className="bg-gradient-to-r from-teal-600 to-cyan-700 rounded-lg p-8 text-white">
                 <h3 className="text-2xl font-bold mb-6">
-                  Solicite una Consulta Gratuita
+                  {t("home.cta.title")}
                 </h3>
-                <p className="mb-6">
-                  Permítanos evaluar sus necesidades contables sin costo alguno.
-                  Nuestros expertos estarán encantados de ayudarle.
-                </p>
+                <p className="mb-6">{t("home.cta.description")}</p>
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <svg
@@ -262,7 +261,7 @@ export default function Home() {
                     >
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                     </svg>
-                    <span>+1 (555) 123-4567</span>
+                    <span>+1 (385) 254-1415</span>
                   </div>
                   <div className="flex items-center">
                     <svg
@@ -280,7 +279,7 @@ export default function Home() {
                   href="#contact"
                   className="inline-block mt-6 bg-emerald-400 text-teal-800 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-300 transition duration-300"
                 >
-                  Contactar Ahora
+                  {t("home.cta.contactNow")}
                 </a>
               </div>
             </div>
