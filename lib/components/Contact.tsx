@@ -259,13 +259,11 @@ export default function Contact() {
                   <option value={t("contact.serviceOptions.taxPlanning")}>
                     {t("contact.serviceOptions.taxPlanning")}
                   </option>
-                  <option value={t("contact.serviceOptions.bookkeeping")}>
-                    {t("contact.serviceOptions.bookkeeping")}
+                  <option value={t("contact.serviceOptions.generalAccounting")}>
+                    {t("contact.serviceOptions.generalAccounting")}
                   </option>
-                  <option
-                    value={t("contact.serviceOptions.businessConsulting")}
-                  >
-                    {t("contact.serviceOptions.businessConsulting")}
+                  <option value={t("contact.serviceOptions.payroll")}>
+                    {t("contact.serviceOptions.payroll")}
                   </option>
                   <option value={t("contact.serviceOptions.other")}>
                     {t("contact.serviceOptions.other")}

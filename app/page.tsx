@@ -119,10 +119,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-4">
-                {t("home.bookkeeping.title")}
+                {t("home.generalAccounting.title")}
               </h3>
               <p className="text-gray-600">
-                {t("home.bookkeeping.description")}
+                {t("home.generalAccounting.description")}
               </p>
             </div>
 
@@ -143,11 +143,9 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-4">
-                {t("home.businessConsulting.title")}
+                {t("home.payroll.title")}
               </h3>
-              <p className="text-gray-600">
-                {t("home.businessConsulting.description")}
-              </p>
+              <p className="text-gray-600">{t("home.payroll.description")}</p>
             </div>
           </div>
         </div>

@@ -90,7 +90,7 @@ export const NavBar = () => {
             </div>
 
             {/* Language Switcher for Desktop */}
-            <LanguageSwitcher variant="button" size="sm" />
+            <LanguageSwitcher variant="sliding" size="sm" />
           </div>
 
           {/* Mobile menu button */}
@@ -164,15 +164,6 @@ export const NavBar = () => {
           >
             {t("nav.contact")}
           </Link>
-          <div className="pt-2">
-            <Link
-              href="/#contact"
-              className="block w-full text-center bg-gradient-to-r from-teal-600 to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-teal-700 hover:to-cyan-800 transition-all duration-300 shadow-md"
-              onClick={toggleMobileMenu}
-            >
-              {t("nav.freeConsultation")}
-            </Link>
-          </div>
         </div>
       </div>
     </nav>

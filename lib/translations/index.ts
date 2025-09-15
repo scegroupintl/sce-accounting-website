@@ -40,11 +40,11 @@ export interface Translations {
       title: string;
       description: string;
     };
-    bookkeeping: {
+    generalAccounting: {
       title: string;
       description: string;
     };
-    businessConsulting: {
+    payroll: {
       title: string;
       description: string;
     };
@@ -157,9 +157,9 @@ export interface Translations {
     errorMessage: string;
     serviceOptions: {
       taxReturns: string;
-      bookkeeping: string;
+      generalAccounting: string;
       taxPlanning: string;
-      businessConsulting: string;
+      payroll: string;
       other: string;
     };
     contactInfo: {
@@ -229,15 +229,15 @@ const englishTranslations: Translations = {
       description:
         "We develop personalized tax strategies to minimize your tax obligations and optimize your long-term finances.",
     },
-    bookkeeping: {
-      title: "Bookkeeping",
+    generalAccounting: {
+      title: "General Accounting",
       description:
-        "We maintain accurate and up-to-date records of all your financial transactions to give you a clear view of your business.",
+        "We provide comprehensive accounting services including financial statement preparation, account reconciliation, and ongoing bookkeeping support to ensure your records are accurate and up-to-date.",
     },
-    businessConsulting: {
-      title: "Business Consulting",
+    payroll: {
+      title: "Payroll Services",
       description:
-        "We offer strategic advice to help you make informed financial decisions and grow your business sustainably.",
+        "We handle all aspects of payroll processing including employee payments, tax withholdings, and compliance with federal and state regulations to ensure accurate and timely payroll management.",
     },
     whyChooseUsTitle: "Why Choose Us?",
     whyChooseUsDescription:
@@ -366,9 +366,9 @@ const englishTranslations: Translations = {
     errorMessage: "Error sending message",
     serviceOptions: {
       taxReturns: "Tax Returns",
-      bookkeeping: "Bookkeeping",
+      generalAccounting: "General Accounting",
       taxPlanning: "Tax Planning",
-      businessConsulting: "Business Consulting",
+      payroll: "Payroll Services",
       other: "Other",
     },
     contactInfo: {
@@ -416,8 +416,8 @@ const spanishTranslations: Translations = {
 
   home: {
     heroPreEmphasis: "",
-    heroTitle: "Servicios Contables",
-    heroPostEmphasis: "de Confianza",
+    heroTitle: "Servicios Contables de",
+    heroPostEmphasis: "Confianza",
     heroSubtitle: "",
     heroDescription:
       "Brindamos servicios contables profesionales para hacer crecer su negocio con la tranquilidad de tener sus finanzas en orden.",
@@ -436,15 +436,15 @@ const spanishTranslations: Translations = {
       description:
         "Desarrollamos estrategias fiscales personalizadas para minimizar sus obligaciones tributarias y optimizar sus finanzas a largo plazo.",
     },
-    bookkeeping: {
-      title: "Teneduría de Libros",
+    generalAccounting: {
+      title: "Contabilidad General",
       description:
-        "Mantenemos registros precisos y actualizados de todas sus transacciones financieras para brindarle una visión clara de su negocio.",
+        "Proporcionamos servicios integrales de contabilidad incluyendo preparación de estados financieros, conciliación de cuentas y soporte continuo de teneduría de libros para garantizar que sus registros sean precisos y estén actualizados.",
     },
-    businessConsulting: {
-      title: "Consultoría Empresarial",
+    payroll: {
+      title: "Servicios de Nómina",
       description:
-        "Ofrecemos asesoramiento estratégico para ayudarle a tomar decisiones financieras informadas y hacer crecer su negocio de manera sostenible.",
+        "Manejamos todos los aspectos del procesamiento de nómina incluyendo pagos a empleados, retenciones de impuestos y cumplimiento de regulaciones federales y estatales para garantizar una gestión de nómina precisa y oportuna.",
     },
     whyChooseUsTitle: "¿Por Qué Elegirnos?",
     whyChooseUsDescription:
@@ -573,9 +573,9 @@ const spanishTranslations: Translations = {
     errorMessage: "Error al enviar mensaje",
     serviceOptions: {
       taxReturns: "Declaraciones de Impuestos",
-      bookkeeping: "Teneduría de Libros",
+      generalAccounting: "Contabilidad General",
       taxPlanning: "Planificación Fiscal",
-      businessConsulting: "Consultoría Empresarial",
+      payroll: "Servicios de Nómina",
       other: "Otro",
     },
     contactInfo: {
