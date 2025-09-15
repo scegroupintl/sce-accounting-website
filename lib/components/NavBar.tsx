@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslations } from "../context/LanguageContext";
 import { LanguageSwitcher, CompactLanguageSwitcher } from "./LanguageSwitcher";
@@ -10,6 +11,7 @@ export const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const lastScrollY = useRef(0);
   const { t } = useTranslations();
+  const pathname = usePathname();
 
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
@@ -75,10 +77,20 @@ export const NavBar = () => {
               </Link>
               <Link
                 href="/about"
-                className="text-gray-700 hover:text-teal-600 px-3 py-2 font-medium transition-colors duration-300 relative group"
+                className={`px-3 py-2 font-medium transition-colors duration-300 relative group ${
+                  pathname.includes("about")
+                    ? "text-teal-600"
+                    : "text-gray-700 hover:text-teal-600"
+                }`}
               >
                 {t("nav.aboutUs")}
-                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                <span
+                  className={`absolute inset-x-0 bottom-0 h-0.5 bg-teal-600 transform transition-transform duration-300 ${
+                    pathname.includes("about")
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                ></span>
               </Link>
               <Link
                 href="/#contact"
@@ -152,7 +164,11 @@ export const NavBar = () => {
           </Link>
           <Link
             href="/about"
-            className="block px-4 py-3 text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-lg font-medium transition-colors duration-300"
+            className={`block px-4 py-3 rounded-lg font-medium transition-colors duration-300 ${
+              pathname === "/about"
+                ? "text-teal-600 bg-teal-50"
+                : "text-gray-700 hover:text-teal-600 hover:bg-teal-50"
+            }`}
             onClick={toggleMobileMenu}
           >
             {t("nav.aboutUs")}
